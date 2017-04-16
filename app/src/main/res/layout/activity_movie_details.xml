@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appBar"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:fitsSystemWindows="true">
+
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:id="@+id/collapsing_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            android:fitsSystemWindows="true"
+            app:contentScrim="?attr/colorPrimary"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed|snap">
+
+            <RelativeLayout
+                android:fitsSystemWindows="true"
+                app:layout_collapseMode="parallax"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <ImageView
+                    app:layout_collapseMode="parallax"
+                    android:scaleType="centerCrop"
+                    android:id="@+id/iv_movie_background"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+                <ImageView
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="80px"
+                    android:layout_marginTop="?attr/actionBarSize"
+                    android:id="@+id/iv_movie_details"
+                    android:layout_width="125dp"
+                    android:layout_height="165dp"
+                    android:scaleType="fitXY"  />
+                <LinearLayout
+                    android:layout_marginLeft="30dp"
+                    android:orientation="vertical"
+                    android:layout_toRightOf="@+id/iv_movie_details"
+                    android:layout_centerVertical="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:textSize="15sp"
+                        android:id="@+id/tv_movie_score"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:textSize="15sp"
+                        android:id="@+id/tv_movie_director"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:id="@+id/tv_movie_star"
+                        android:textSize="15sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:id="@+id/tv_movie_type"
+                        android:textSize="15sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:textSize="15sp"
+                        android:id="@+id/tv_movie_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:textSize="15sp"
+                        android:id="@+id/tv_movie_place"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
+            </RelativeLayout>
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:layout_collapseMode="pin" />
+        </android.support.design.widget.CollapsingToolbarLayout>
+    </android.support.design.widget.AppBarLayout>
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <com.mingle.widget.LoadingView
+                    android:scrollbarFadeDuration="500"
+                    android:visibility="gone"
+                    android:layout_marginTop="20dp"
+                    android:id="@+id/loadView"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"/>
+                <android.support.v7.widget.CardView
+                    android:visibility="gone"
+                    android:id="@+id/cv_more_details"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="15dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginTop="35dp"
+                    app:cardCornerRadius="4dp">
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+                            <View
+                                android:layout_marginTop="2dp"
+                                android:layout_marginLeft="2dp"
+                                android:layout_gravity="center_vertical"
+                                android:layout_width="2dp"
+                                android:layout_height="18dp"
+                                android:background="#ffce3d3a" />
+                            <TextView
+                                android:layout_marginTop="2dp"
+                                android:layout_gravity="center_vertical"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="3dp"
+                                android:text="另称"
+                                android:textColor="#ff333333"
+                                android:textSize="17sp" />
+                        </LinearLayout>
+                        <TextView
+                            android:textSize="15sp"
+                            android:id="@+id/tv_movie_said"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginRight="3dp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginBottom="5dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+                            <View
+                                android:layout_marginLeft="2dp"
+                                android:layout_gravity="center_vertical"
+                                android:layout_width="2dp"
+                                android:layout_height="18dp"
+                                android:background="#ffce3d3a" />
+                            <TextView
+                                android:layout_gravity="center_vertical"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="3dp"
+                                android:text="剧情简介"
+                                android:textColor="#ff333333"
+                                android:textSize="17sp" />
+                        </LinearLayout>
+                        <TextView
+                            android:textSize="15sp"
+                            android:id="@+id/tv_movie_info"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginRight="3dp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginBottom="5dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+                            <View
+                                android:layout_marginLeft="2dp"
+                                android:layout_gravity="center_vertical"
+                                android:layout_width="2dp"
+                                android:layout_height="18dp"
+                                android:background="#ffce3d3a" />
+                            <TextView
+                                android:layout_gravity="center_vertical"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="3dp"
+                                android:text="导演 &amp; 演员"
+                                android:textColor="#ff333333"
+                                android:textSize="17sp" />
+                        </LinearLayout>
+                        <android.support.v7.widget.RecyclerView
+                            android:id="@+id/rv_movie_people"
+                            android:layout_margin="5dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                        </android.support.v7.widget.RecyclerView>
+                    </LinearLayout>
+
+                </android.support.v7.widget.CardView>
+            </LinearLayout>
+        </RelativeLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+
+    <android.support.design.widget.FloatingActionButton
+        android:src="@drawable/shoucan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        app:layout_anchor="@id/appBar"
+        android:id="@+id/fab_movie"
+        app:layout_anchorGravity="bottom|end" />
+</android.support.design.widget.CoordinatorLayout>
