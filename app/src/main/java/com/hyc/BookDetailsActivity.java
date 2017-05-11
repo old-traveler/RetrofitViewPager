@@ -2,7 +2,6 @@ package com.hyc;
 
 import android.app.Instrumentation;
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Handler;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.FloatingActionButton;
@@ -17,7 +16,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 
@@ -35,7 +33,6 @@ public class BookDetailsActivity extends AppCompatActivity {
         initView(intent);
         ImageView imageView=(ImageView) findViewById(R.id.img_book_details);
         imageView.setTransitionName("head");
-
     }
 
     private void initView(Intent intent) {

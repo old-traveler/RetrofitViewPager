@@ -41,6 +41,7 @@
                     android:layout_height="165dp"
                     android:scaleType="fitXY"  />
                 <LinearLayout
+                    android:layout_marginRight="10dp"
                     android:layout_marginLeft="30dp"
                     android:orientation="vertical"
                     android:layout_toRightOf="@+id/iv_movie_details"

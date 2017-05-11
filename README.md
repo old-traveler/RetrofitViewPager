@@ -1,2 +1,5 @@
 # RetrofitViewPager
-retrofit+rxjava+viewpage'demo
+
+初学Retrofit + RxJava 的一个小Demo
+
+
